@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+body{
+	font-family:"Play", serif;
+	font-style: normal;
+	font-size: 1.25rem;
+	color: #2f3e46;
+	background-color: #2a9d8f;
+}
+[class$="__container"]{
+	max-width: 1230px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+[class$="__link"]{
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-align: center;
+	color: #fca311;
+	display: inline-block;
+	margin-bottom: 1em;
+}
+[class$="__link"]:hover{
+	text-decoration: underline;
+}
+[class$="__item"]{
+	color:white;
+	position: relative;
+	padding-left: 28px;
+}
+[class$="__item"]:not(:last-child){
+	margin-bottom: 0.5em;
+}
+[class$="__item"]::before{
+	content: "";
+	background: url(../checked.png) center no-repeat;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	margin-left: -28px;
+}
+[class$="__item"] span{
+	color: #a7c957;
+}
+article{
+	background-color: #4a4e69;
+	padding: 30px 30px;
+	border-radius: 10px;
+	border:2px solid #fca311;
+}
+section{
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}

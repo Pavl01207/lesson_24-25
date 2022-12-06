@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="icon.png">
+	<title>Lesson 24</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<section class="exersice">
+					<article class="exersice__first first">
+						<h2 class="first__title"><a href="https://www.youtube.com/watch?v=GULFKAX0nxY&t=1369" target="_blank" class="first__link">
+							Массивы в JAVASCRIPT. Методы массивов. Редактирование, поиск, сортировка. Уроки JavaScript с нуля</a></h2>
+							<ul class="first__list">
+								<li class="first__item">
+									<span>Задача №1</span>: результат буде <mark>4</mark>, оскільки ми дублюємо масив в нову змінну newArr,зміни в якій будуть також відтворюватись і в масиві arr.
+									Наступне ми додаємо новий елемент ('Петя') в кінець масива. Кількість новий елементів у масиві буде 4.
+								</li>
+								<li class="first__item">
+									<span>Задача №2</span><br>
+									let arrOne = ['Вася', 'Иштван'];<br>
+									arrOne.push('Оля');<br>
+									arrOne[1] = ('Петя');<br>
+									console.log(arrOne.indexOf('Петя',1));<br>
+									let removed = arrOne.splice(0,1);<br>
+									console.log(removed);<br>
+									arrOne.unshift('Маша', 'Паша');<br>
+									console.log(arrOne);<br>
+								</li>
+								<li class="first__item">
+									<span>Задача №3</span><br>
+									let arrTwo = ['Ваня', 'Иштван', 'Оля',];<br>
+									let removedTwo = arrTwo.splice(1,1);<br>
+									console.log(removedTwo);
+								</li>
+								<li class="first__item">
+									<span>Задача №3</span><br>
+									let str = 'Ваня, Иштван, Оля';<br>
+									let arrNew = str.split(',');<br>
+									console.log(arrNew);
+								</li>
+							</ul>
+					</article>
+					<article class="exersice__second second">
+						<h2 class="second__title"><a href="https://www.youtube.com/watch?v=6cKoB5ijaGA&t=1s" target="_blank" class="second__link">
+							Функции в JAVASCRIPT. Стрелочные функции, рекурсия, планирование: setTimeout и setInterval.</a></h2>
+							<ul class="second__list">
+								<li class="second__item">
+									<span>Задача №1</span>: першим в консоль видасть <mark>`Коля`</mark>, оскільки в подальшому немає інших команд, setTimeout потрапить в обробку одразу
+									(<a href="https://highload.today/kak-ustroen-event-loop-v-javascript-parallelnaya-model-i-tsikl-sobytij/" target="_blank" style="color:gray">джерело</a>)
+								</li>
+								<li class="second__item">
+									<span>Задача №2</span>: вірно викликана функція, оскільки функція створена за <mark>Function Declaretion</mark>, та може бути виклакана до її створення.
+								</li>
+								<li class="second__item">
+									<span>Задача №3</span>: не вірно викликана функція, оскільки функція створена за <mark>Function Expresion</mark>, та може бути виклакана тільки після її створення.
+								</li>
+								<li class="second__item">
+									<span>Задача №4</span>: потрібно об'явити змінну за межами блоку та присвоїти її значення функції.<br>
+									let showMessage;<br>
+									if (2 > 1) {<br>
+										showMessage = function() {<br>
+											console.log(`Повідомлення`);<br>
+										};<br>
+									}<br>
+									showMessage();
+								</li>
+							</ul>
+					</article>
+					<article class="exersice__third third">
+						<h2 class="third__title"><a href="https://www.youtube.com/watch?v=TEeKr2ON66A&t=1596s" target="_blank" class="third__link">
+							JavaScript размеры прокрутка и координаты элементов на странице и окна браузера.</a></h2>
+							<ul class="third__list">
+								<li class="third__item">
+									<span>Задача №1</span><br>
+									const width = document.documentElement; <mark>(отримуємо увесь документ)</mark><br>
+									const mainWidth = width.clientWidth; <mark>(отримуємо ширину браузера без елементів прокрутки)</mark><br>
+									const windowWidth = window.innerWidth; <mark>(отримуємо ширину вікна браузера)</mark><br>
+									console.log(windowWidth - mainWidth); <mark>(ширину вікна браузера віднімаємо ту ж ширину без врахування елементів скролу,і отримуємо саму ширину скролу)</mark><br>
+								</li>
+								<li class="third__item">
+									<span>Задача №2</span>: потрібно скористатись <mark>setTimeout</mark><br>
+									function setScrollTo() {<br>
+										window.scrollTo(<br>
+											{<br>
+												top: 100,<br>
+												left: 0,<br>
+												befavior: "smooth"<br>
+											}<br>
+										);<br>
+									};<br>
+									setTimeout(setScrollTo, 1000);
+								</li>
+								<li class="third__item">
+									<span>Задача №3</span>: варто скористатись <mark>getBoundingClientRect()</mark><br>
+									const elemOne = document.querySelector('.second__item');<br>
+									const getElemOne = elemOne.getBoundingClientRect();<br>
+									console.log(getElemOne);<br>
+									const elemTwo = document.querySelector('.second__item');<br>
+									const getElemTwo = elemTwo.getBoundingClientRect();<br>
+									console.log(getElemTwo);<br>
+									const elemThree = document.querySelector('.second__item');<br>
+									const getElemThree = elemThree.getBoundingClientRect();<br>
+									console.log(getElemThree);
+								</li>
+							</ul>
+					</article>
+					<article class="exersice__four four">
+						<h2 class="four__title"><a href="https://www.youtube.com/watch?v=DuWyc76lYC4&t=2s" target="_blank" class="four__link">
+							JavaScript Document object model (DOM) за час. Изменение HTML CSS. Атрибуты и свойства. Окружение.</a></h2>
+							<ul class="four__list">
+								<li class="four__item" data-say-hi="yes">
+									<span>Задача №1</span><br>
+									const attr = document.querySelector('[data-say-hi]');<br>
+									console.log(attr.dataset.sayHi);
+								</li>
+								<li class="four__item">
+									<span>Задача №2</span><br>
+									const elemList = document.querySelector('.list');<br>
+									const elemItem = elemList.<mark>lastElementChild</mark>;<br>
+									console.log(elemItem);
+								</li>
+								<li class="four__item">
+									<span>Задача №3</span><br>
+									const  itemsClass = document.<mark>getElementsByClassName</mark>('like');<br>
+									console.log(itemsClass);
+								</li>
+								<li class="four__item">
+									<span>Задача №4</span>:не додасться,так як використовується querySelectorAll. Для належної роботи потрібно використати <mark>querySelector</mark>.
+									В такому разі елеметн розташується всередині та в кінці.<br>
+									const listOne = document.querySelector('.list');<br>
+									listOne.insertAdjacentHTML(<br>
+										'beforeend',<br>
+										'&lt;li&gt;Text&lt;/li&gt;'<br>
+										);<br>
+								</li>
+							</ul>
+					</article>
+					<article class="exersice__five five">
+						<h2 class="five__title"><a href="https://www.youtube.com/watch?v=bWCzbR5DvCo&t=2906s" target="_blank" class="five__link">
+							JAVASCRIPT СОБЫТИЯ. addEventListener делегирование. Cобытия мыши клавиатуры загрузки сайта. Практика</a></h2>
+						<a href="formsearch/index.html" target="_blank" class="five__link">Завдання</a>
+					</article>
+				</section>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+	<script src="javascript/script.js">
+	</script>
+</body>
+</html>
